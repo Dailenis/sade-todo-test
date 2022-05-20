@@ -1,6 +1,6 @@
 <template>
     <div class="filters">
-        <li >
+        <li > 
             <router-link :to="{ name: 'Home' }">All</router-link>
         </li>
         <li >
@@ -15,6 +15,9 @@
 <script>
 export default {
     name:'AppFilters',
+	created() {
+		console.log(this.$router.currentRoute.name)
+	},
 }
 </script>
 

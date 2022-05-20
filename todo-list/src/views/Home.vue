@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import NewTodo from '../components/NewTodo.vue'
+import NewTodo from '../components/TodoNew.vue'
 import TodoList from '../components/TodoList.vue'
-import Footer from '../components/FooterTab.vue'
+import Footer from '../components/AppFooter.vue'
 
 export default {
     name: 'AppHome',
@@ -31,7 +31,7 @@ export default {
     },
     data() {
         return {
-            title: 'todo'
+            title: 'todos'
         }
     },
 }

@@ -1,5 +1,5 @@
 <template>
-        <div class="main" @click="check($event)"> 
+        <div class="main" @click="check()"> 
              <input
                 :checked="$store.getters.allChecked"
                 type="checkbox" 
@@ -19,7 +19,6 @@ export default {
             }
             else{
                 this.$store.state.todoList.forEach(element => element.state= 'completed');
-            
             }
         }
     },

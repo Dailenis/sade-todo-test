@@ -36,15 +36,12 @@ const store = new Vuex.Store({
         },
 
         updateTodoItem({state, commit}, {index, value}){
-            console.log(value)
-            console.log(state.todoList[index].name, value)
             const list = [...state.todoList]
             list[index].name = value
             commit('setTodoList', list)
         },
 
         removeTodoItem({state, commit}, index){
-            console.log(state.todoList[index])
             const list = state.todoList.filter(ele => ele != state.todoList[index] )
             commit('setTodoList', list)
         },

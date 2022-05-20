@@ -3,7 +3,10 @@
         @dblclick="edit=true"
         @click="todo.state==='completed'? todo.state = 'active': todo.state = 'completed'"
     >
-        <NewTodo v-if="edit" class="editing" :class="edit? 'edit': 'view'"
+        <NewTodo 
+            v-if="edit" 
+            class="editing" 
+            :class="edit? 'edit': 'view'"
             :todoIndex="todoIndex" 
             @updateDone="edit=false"
         />
@@ -25,7 +28,7 @@
 </template>
 
 <script>
-import NewTodo from './NewTodo.vue'
+import NewTodo from './TodoNew.vue'
 export default {
     name: 'TodoItem',
     props:{

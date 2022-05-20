@@ -2,18 +2,17 @@
     <div class="main">
         <ToggleAll/>  
         <div  class="todo-list"> 
-                     
-        <li 
-            v-for="(todo, index) in todoList" 
-            :key="index"
-            :class="todo.state==='completed'? 'completed' : ''"
-            >
-            <TodoItem  
-                :todo="todo" 
-                :todoIndex="index"
-            />         
-        </li>        
-    </div>
+			<li 
+				v-for="(todo, index) in todoList" 
+				:key="index"
+				:class="todo.state==='completed'? 'completed' : ''"
+				>
+				<TodoItem  
+					:todo="todo" 
+					:todoIndex="index"
+				/>         
+			</li>        
+		</div>
     </div>
 </template>
 

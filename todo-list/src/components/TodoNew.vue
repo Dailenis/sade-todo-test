@@ -7,7 +7,6 @@
 		v-on:keyup.esc.stop="escape()"
 		v-on:keyup.enter="localIndex !==null ? editItem():  addItem()"
 		@blur="localIndex !==null ? editItem() : ''"
-		
 	/>
 </template>
 
