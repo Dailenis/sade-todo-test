@@ -14,11 +14,14 @@ export default {
     name: 'ToggleAll',    
     methods: {
         check(){
+
             if(this.$store.getters.allChecked){
-                this.$store.state.todoList.forEach(element => element.state= 'active');
+                this.$store.dispatch('setAllTodosState', 'active')
+                // this.$store.state.todoList.forEach(element => element.state= 'active');
             }
             else{
-                this.$store.state.todoList.forEach(element => element.state= 'completed');
+                this.$store.dispatch('setAllTodosState', 'completed')
+                // this.$store.state.todoList.forEach(element => element.state= 'completed');
             }
         }
     },

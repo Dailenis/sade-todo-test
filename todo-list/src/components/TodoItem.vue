@@ -1,7 +1,7 @@
 <template>
     <li 
         @dblclick="edit=true"
-        @click="todo.state==='completed'? todo.state = 'active': todo.state = 'completed'"
+        @click="todo.state==='completed'?  setState('active'): setState('completed')"
     >
         <NewTodo 
             v-if="edit" 
@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import NewTodo from './TodoNew.vue'
 export default {
     name: 'TodoItem',
     props:{
@@ -36,7 +35,7 @@ export default {
         todoIndex: { type: Number, default: -1}
     },
     components:{
-        NewTodo,
+        NewTodo: () => import(/* webpackChunkName: "NewTodo" */ './TodoNew.vue'),
     },
     data() {
         return {
@@ -49,6 +48,10 @@ export default {
                 this.$store.dispatch('removeTodoItem', this.todoIndex)
             }
         },
+
+        setState(value){
+            this.$store.dispatch('setOneState',  {index: this.todoIndex , value: value})
+        }
         
        
     },

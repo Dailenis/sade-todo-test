@@ -49,6 +49,18 @@ const store = new Vuex.Store({
         clearCompleted({state, commit}){
             let list = state.todoList.filter(ele => ele.state !== 'completed'  )
             commit('setTodoList', list)
+        },
+
+        setAllTodosState({state, commit}, value){
+          let list =  [...state.todoList];
+          list.forEach(element => element.state= value);
+          commit('setTodoList', list)
+        },
+
+        setOneState({state, commit}, {index, value}){
+          let list =  [...state.todoList];
+          list[index].state = value
+          commit('setTodoList', list)
         }
        
     },

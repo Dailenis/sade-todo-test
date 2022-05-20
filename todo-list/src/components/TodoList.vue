@@ -18,14 +18,14 @@
 
 <script>
 import ToggleAll from './ToggleAll.vue'
-import TodoItem from './TodoItem.vue'
 export default {
     name:'TodoList',
     props:{
        state: { type: String, default: 'all'}
     },
     components:{
-        ToggleAll, TodoItem
+        ToggleAll,
+		TodoItem: () => import(/* webpackChunkName: "TodoItem" */ './TodoItem.vue'),
     },
     computed:{
         todoList(){

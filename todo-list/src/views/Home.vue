@@ -11,8 +11,6 @@
 
 <script>
 import NewTodo from '../components/TodoNew.vue'
-import TodoList from '../components/TodoList.vue'
-import Footer from '../components/AppFooter.vue'
 
 export default {
     name: 'AppHome',
@@ -20,9 +18,9 @@ export default {
         state: { type: String, default: 'all'}
     },
     components:{
+        TodoList: () => import(/* webpackChunkName: "TodoList" */ '../components/TodoList.vue'),
+        Footer: () => import(/* webpackChunkName: "AppFooter" */ '../components/AppFooter.vue'),
         NewTodo,
-        TodoList,
-        Footer,
     },
     computed:{
         todoListLength(){
