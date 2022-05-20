@@ -7,11 +7,11 @@
 
         <AppFilters/>
 
-        <button v-if="!$store.getters.allUnchecked"
+        <div v-if="!$store.getters.allUnchecked"
 			class="clear-completed" 
 			@click="$store.dispatch('clearCompleted')">
 			Clear completed
-		</button>
+		</div>
         
     </div>
 </template>
